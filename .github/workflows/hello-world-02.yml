@@ -1,0 +1,24 @@
+name: Hello Wotld 02
+
+on:
+  workflow_dispatch:'
+
+jobs:
+  say-hello-inline-bash:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "Hello from w1tn3sss in a GitHub Action Workflow! (BASH) "
+
+  say-hello-inline-python:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: print("Hello from an inline python script in a GitHub Action Workflow! (PYTHON) ")
+        shell: python
+
+  say-hello-action:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/hello-world-javascript-action@081a6d193d1dcb38460df1e6927486d748730f9d
+        with:
+          who-to-greet: "from an action in the GitHub Action marketplace! (ACTIONS) "
+
